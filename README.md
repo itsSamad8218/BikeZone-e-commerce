@@ -4,7 +4,8 @@ BikeZone is a modern, fully responsive eCommerce web application for purchasing 
 TEST/DEMO 🚴‍♂️ BikeZone - Cycle eCommerce Website
 BikeZone is a modern, fully responsive eCommerce web application for purchasing high-quality cycles online. Built with HTML, CSS, JavaScript, Java, and Node.js, this project delivers a seamless and interactive user experience enhanced with animations and Progressive Web App (PWA) features.
 
-TEST/DEMO-
+TEST/DEMO- https://itssamad8218.github.io/BikeZone-e-commerce/ 
+(Disclaimer-PWA  and backend feature will work when host on different software)
 
 🌟 Features
 🎨 Beautiful UI/UX with smooth CSS animations
