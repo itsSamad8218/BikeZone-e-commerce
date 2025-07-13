@@ -1,0 +1,223 @@
+.hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/248b3725-fa3b-4b8a-b3dc-d64b4106e19f.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    
+}
+.logo {
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+}
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+.slider-nav button {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 5px 7px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.bike-card {
+    animation: slideIn 0.8s ease-out forwards;
+    cursor: pointer;
+}
+.bike-card:nth-child(1) { animation-delay: 0.2s; }
+.bike-card:nth-child(2) { animation-delay: 0.4s; }
+.bike-card:nth-child(3) { animation-delay: 0.6s; }
+.bike-card:nth-child(4) { animation-delay: 0.8s; }
+
+ /* Bike Details Modal */
+ .bike-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1000;
+    overflow-y: auto;
+}
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+
+    .image-slider {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+}
+.bike-details {
+    padding: 10px;
+}
+.bike-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+.spec-item {
+    display: flex;
+    align-items: center;
+}
+.spec-icon {
+    margin-right: 5px;
+    font-size: 10px;
+}
+
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientBG 8s ease-in-out infinite;
+}
+
+.bike-card {
+  transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s;
+}
+.bike-card:hover {
+  transform: translateY(-10px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 10px 32px 0 rgba(255,140,0,0.25), 0 1.5px 4px 0 rgba(0,0,0,0.12);
+  z-index: 2;
+}
+.favorite-btn .heart {
+  transition: color 0.2s, text-shadow 0.2s;
+  color: #fff;
+  text-shadow: 0 0 4px #000;
+}
+.favorite-btn.favorited .heart {
+  color: #fb923c;
+  text-shadow: 0 0 8px #fb923c;
+  content: '\2665';
+}
+.quick-view-btn {
+  transition: opacity 0.3s;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.animate-fadeIn { animation: fadeIn 0.5s; }
+
+.testimonial-avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fb923c;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.footer-link { font-weight: 500; }
+#scrollTopBtn { transition: opacity 0.3s, background 0.3s; }
+
+/* PWA Specific Styles */
+#installBtn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* PWA Install Prompt Animation */
+.install-prompt {
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Offline indicator */
+.offline-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ef4444;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.offline-indicator.show {
+    transform: translateY(0);
+}
+
+/* PWA App-like experience */
+@media (display-mode: standalone) {
+    body {
+        padding-top: 0;
+    }
+    
+    nav {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .pwa-safe-area {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}

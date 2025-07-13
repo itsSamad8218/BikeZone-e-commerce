@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>customization-[Bike] </title>
+  <link rel="stylesheet" href="stylee.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+</head>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="wrap">
+   <input class="initial" type="checkbox"></input> 
+  <input class="wheel1" name="wheel" type="radio"></input>
+  <input class="wheel2" name="wheel" type="radio"></input>
+  <input class="wheel3" name="wheel" type="radio"></input>
+  <input class="wheel4" name="wheel" type="radio"></input>
+  <input class="buy" type="checkbox" type="text" ></input>
+  <h1>Configure the Bike</h1>
+  <h2>ONE CLICK AWAY</h2>
+  <h3>Wheels</h3>
+
+    <div class="wheeltoggle"></div>
+    <div class="wheeltoggle"></div>
+    <div class="wheeltoggle"></div>
+    <div class="wheeltoggle"></div>
+ 
+  <div class="buy" id="buyButton">
+  </div>
+  
+  <div class="toggle expand">
+    <i class="fas fa-bicycle"></i>
+  </div>
+  <div class="toggle">
+    <i class="fas fa-bicycle"></i>
+  </div>
+  <div class="background"></div>
+  <div class="frame">
+    <div class="rear"></div>
+    <div class="stem"></div>
+    <div class="shaft"></div>
+    <div class="seat"></div>
+    <div class="wheel one front">
+      <div class="inner"></div>
+    </div>
+    <div class="wheel one back">
+      <div class="inner"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const buyButton = document.getElementById('buyButton');
+    
+    // Function to handle buy button click
+    function handleBuyClick(e) {
+        
+        const rect = buyButton.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const clickY = e.clientY - rect.top;
+        
+        
+        if (clickX < 0 && clickY >= 0 && clickY <= rect.height) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Show login alert
+            alert('Please login first to complete your purchase!');
+            
+            // Redirect to index.html after alert
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 100);
+            
+            return false;
+        }
+    }
+    
+    // Add click event listener to the buy button container
+    buyButton.addEventListener('click', handleBuyClick);
+    
+    // Also add a more specific event listener for the pseudo-element area
+    buyButton.addEventListener('mousedown', function(e) {
+        const rect = buyButton.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        
+        // If click is in the left area (where pseudo-element appears)
+        if (clickX < 0) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Show login alert
+            alert('Please login first to complete your purchase!');
+            
+            // Redirect to index.html after alert
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 100);
+        }
+    });
+});
+</script>
+  
+</body>
+</html>
